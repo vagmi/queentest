@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Hello world
+  if currentUser
+    p Logged in as #{currentUser.attributes.email}
+    form(action="/logout" method="post")
+      button.btn.btn-primary(type="submit") Logout
+  else
+    p 
+      You have not logged yet.
+      a(href="/login") Login

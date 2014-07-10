@@ -1,0 +1,16 @@
+extends layout
+block content
+  .row
+    if errors
+      .col-md-12= errors.base
+  .row
+    .col-md-12
+      form(role="form" method="post" action="/login")
+        .form-group
+          label(for="input-email") Email
+        input#input-email.form-control(type="email" name="email")
+        .form-group
+          label(for="input-password") Password 
+          input#input-email.form-control(type="password" name="password")
+        input(type="hidden" value=redirectTo name="redirect_to")
+        button.btn.btn-primary(type="Submit") Login
